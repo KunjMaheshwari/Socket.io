@@ -28,6 +28,7 @@ io.on("connection",(socket) =>{
 
     socket.on("message", (data) =>{
         console.log(data);
+        socket.broadcast.emit("received message", data);
     })
 
     socket.on("disconnect", () =>{
